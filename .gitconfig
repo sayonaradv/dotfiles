@@ -1,9 +1,9 @@
 [user]
-	name = sshinigami7
-  email = 07803920+sshinigami7@users.noreply.github.com 
+    name = sshinigami7
+    email = 07803920+sshinigami7@users.noreply.github.com 
 [core]
 	excludesfile = ~/.gitignore_global
-  editor = nvim
+    editor = nvim
 [color]
 	ui = true
 [init]
