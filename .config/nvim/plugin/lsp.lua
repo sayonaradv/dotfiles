@@ -1,4 +1,4 @@
-vim.lsp.enable({ "ruff", "ty", "luals", "clangd", "rust-analyzer" })
+vim.lsp.enable({ "ruff", "pyrefly", "luals", "clangd", "rust-analyzer" })
 vim.diagnostic.config({ virtual_text = true })
 
 vim.api.nvim_create_autocmd("LspAttach", {
