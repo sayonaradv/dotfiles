@@ -1,7 +1,6 @@
 [user]
-    name = sshinigami7
-    email = 07803920+sshinigami7@users.noreply.github.com 
-[core]
+    name = shinigami-dv
+    email = 107803920+shinigami-dv@users.noreply.github.com
 	excludesfile = ~/.gitignore_global
     editor = nvim
 [color]
