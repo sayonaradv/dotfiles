@@ -1,0 +1,7 @@
+--target=$HOME
+--ignore=.stowrc
+--ignore=.git
+--ignore=DS_Store
+--ignore=.stylua.toml
+--ignore=README.md
+--ignore=LICENSE

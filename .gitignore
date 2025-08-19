@@ -1,0 +1,69 @@
+#Ignore all files starting with an underscore
+_*  
+
+# Object files
+*.o  
+
+# Temporary files created by editors (e.g., Emacs)
+\#*#  
+*#  
+.#*  
+.*~  
+*~  
+
+# macOS specific files
+.DS_Store  
+
+# Temporary files for various applications
+*.sw[po]  
+tags  
+TAGS  
+.svn  
+*.dSYM  
+
+# Log files
+*.log  
+
+# LaTeX auxiliary files
+*.dvi  
+*.aux  
+*.elc  
+
+# Local environment configurations
+.zshrc.local  
+.python-version  
+
+# Sample or example files
+samples  
+
+# Networking files
+.netrwhist  
+
+# Ruby Bundler
+.bundle  
+/vendor/bundle  
+Gemfile.lock  
+
+# Node.js
+node_modules  
+bower_components  
+
+# Additional Suggestions
+# Ignore all generated documentation
+docs/  
+
+# Ignore all temporary files created by editors or IDEs
+.idea/  
+.vscode/  
+
+# Ignore any history or log files for version control
+.history  
+
+# Ignore environment variable files
+.env  
+
+# Ignore SSH keys (if applicable)
+*.pem  
+
+# Ignore txt files
+*.txt
