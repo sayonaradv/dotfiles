@@ -1,6 +1,7 @@
-theme = techbase
-font-family = SF Mono
+theme = catppuccin-mocha
+font-family = TX-02
 font-size = 22
+background = 101623
 
 # macos-window-shadow = false
 auto-update-channel = tip

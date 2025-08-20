@@ -21,4 +21,4 @@ opt.completeopt = { "menuone", "popup", "noinsert" } -- Options for completion m
 -- opt.winborder = "rounded" -- Use rounded borders for windows
 opt.hlsearch = false -- Disable highlighting of search results
 
-vim.cmd.colorscheme("techbase")
+vim.cmd.colorscheme("catppuccin")

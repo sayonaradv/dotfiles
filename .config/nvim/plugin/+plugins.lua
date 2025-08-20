@@ -9,8 +9,8 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.nvim" },
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/vieitesss/miniharp.nvim" },
-  { src = "https://github.com/mcauley-penney/techbase.nvim" },
-  -- { src = "https://github.com/mitch1000/backpack.nvim" },
+  { src = "https://github.com/catppuccin/nvim" },
+  -- { src = "https://github.com/rebelot/kanagawa.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
@@ -102,13 +102,28 @@ require("snacks").setup({
 
 require("miniharp").setup()
 
-require("techbase").setup({
-  italic_comments = true,
-  transparent = true,
-  plugin_support = {
-    blink = true,
-    gitsigns = true,
-    hl_match_area = true,
-    lualine = true,
+require("catppuccin").setup({
+  flavour = "mocha",
+  transparent_background = true,
+  float = {
+    transparent = true,
+  },
+  styles = {
+    functions = { "italic" },
+    keywords = { "italic" },
+    types = { "italic" },
+  },
+  color_overrides = {
+    all = {
+      text = "#ffffff",
+    },
+  },
+  highlight_overrides = {
+    all = function(colors)
+      return {
+        ["@comment"] = { fg = colors.peach, style = { "italic" } },
+        ["@string"] = { fg = colors.peach },
+      }
+    end,
   },
 })
