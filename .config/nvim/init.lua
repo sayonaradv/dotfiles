@@ -40,6 +40,7 @@ autocmd("LspAttach", {
     map("n", "gd", vim.lsp.buf.definition, opts)
     map("n", "gD", vim.lsp.buf.declaration, opts)
     map("n", "gs", vim.lsp.buf.signature_help, opts)
+    map("n", "gh", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, opts)
   end,
 })
 
@@ -68,8 +69,9 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.nvim" },
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/vieitesss/miniharp.nvim" },
-  { src = "https://github.com/catppuccin/nvim" },
-  -- { src = "https://github.com/rebelot/kanagawa.nvim" },
+  -- { src = "https://github.com/catppuccin/nvim" },
+  { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
+  --
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
@@ -178,27 +180,27 @@ require("snacks").setup({
 -- Miniharp
 require("miniharp").setup()
 
--- Catppuccin
-require("catppuccin").setup({
-  flavour = "mocha",
-  transparent_background = true,
-  float = { transparent = true },
-  styles = {
-    functions = { "italic" },
-    keywords = { "italic" },
-    types = { "italic" },
-  },
-  color_overrides = { all = { text = "#ffffff" } },
-  highlight_overrides = {
-    all = function(colors)
-      return {
-        ["@comment"] = { fg = colors.peach, style = { "italic" } },
-        ["@string"] = { fg = colors.peach },
-      }
-    end,
-  },
-})
-vim.cmd.colorscheme("catppuccin")
+-- -- Catppuccin
+-- require("catppuccin").setup({
+-- 	flavour = "mocha",
+-- 	transparent_background = true,
+-- 	float = { transparent = true },
+-- 	styles = {
+-- 		functions = { "italic" },
+-- 		keywords = { "italic" },
+-- 		types = { "italic" },
+-- 	},
+-- 	color_overrides = { all = { text = "#ffffff" } },
+-- 	highlight_overrides = {
+-- 		all = function(colors)
+-- 			return {
+-- 				["@comment"] = { fg = colors.peach, style = { "italic" } },
+-- 				["@string"] = { fg = colors.peach },
+-- 			}
+-- 		end,
+-- 	},
+-- })
+vim.cmd.colorscheme("solarized-osaka")
 
 -----------------------------------------------------------
 -- KEYMAPS
@@ -230,7 +232,7 @@ keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "sa", "gg<S-v>G")
 
 -- Helpful
-keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>")
+keymap("n", "<leader>ff", vim.lsp.buf.format)
 keymap("x", "y", [["+y]])
 keymap("n", "<leader>cd", '<cmd>lua vim.fn.chdir(vim.fn.expand("%:p:h"))<CR>')
 keymap("n", "<leader>U", "<cmd>lua vim.pack.update()<CR>")
