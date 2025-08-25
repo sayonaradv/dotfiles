@@ -1,7 +1,6 @@
 theme = solarized-osaka-dark
-font-family = TX-02
+font-family = SF Mono
 font-size = 22
-# background = 101623
 
 # macos-window-shadow = false
 auto-update-channel = tip
