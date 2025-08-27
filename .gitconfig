@@ -1,8 +1,8 @@
 [user]
-    name = shinigami-dv
-    email = 107803920+shinigami-dv@users.noreply.github.com
-	excludesfile = ~/.gitignore_global
-    editor = nvim
+  name = sulzyy
+  email = 07803920+sulzyy@users.noreply.github.com
+  excludesfile = ~/.gitignore_global
+  editor = nvim
 [color]
 	ui = true
 [init]
