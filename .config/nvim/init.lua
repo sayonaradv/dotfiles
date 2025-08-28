@@ -28,7 +28,7 @@ opt.incsearch = true
 -----------------------------------------------------------
 -- LSP CONFIGURATION
 -----------------------------------------------------------
-vim.lsp.enable({ "ruff", "pyrefly", "luals", "clangd", "rust-analyzer" })
+vim.lsp.enable({ "ruff", "ty", "luals", "clangd", "rust-analyzer" })
 vim.diagnostic.config({ virtual_text = true })
 
 -- LSP keymaps
@@ -69,17 +69,16 @@ vim.pack.add({
   { src = "https://github.com/echasnovski/mini.nvim" },
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/vieitesss/miniharp.nvim" },
-  -- { src = "https://github.com/catppuccin/nvim" },
-  { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
-  --
+  { src = "https://github.com/Koalhack/darcubox-nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
 -----------------------------------------------------------
 -- TREESITTER
 -----------------------------------------------------------
-local parsers = { "lua", "python", "rust", "sql", "toml", "yaml", "json" }
+local parsers = { "lua", "python", "rust" }
 local nts = require("nvim-treesitter")
+nts.setup()
 nts.install(parsers)
 
 -- Update parsers on plugin update
@@ -107,6 +106,11 @@ autocmd("FileType", {
       vim.treesitter.start()
     end
   end,
+})
+
+autocmd("FileType", {
+  pattern = { "python", ".py" },
+  callback = function() vim.treesitter.start() end,
 })
 
 -----------------------------------------------------------
@@ -180,27 +184,19 @@ require("snacks").setup({
 -- Miniharp
 require("miniharp").setup()
 
--- -- Catppuccin
--- require("catppuccin").setup({
--- 	flavour = "mocha",
--- 	transparent_background = true,
--- 	float = { transparent = true },
--- 	styles = {
--- 		functions = { "italic" },
--- 		keywords = { "italic" },
--- 		types = { "italic" },
--- 	},
--- 	color_overrides = { all = { text = "#ffffff" } },
--- 	highlight_overrides = {
--- 		all = function(colors)
--- 			return {
--- 				["@comment"] = { fg = colors.peach, style = { "italic" } },
--- 				["@string"] = { fg = colors.peach },
--- 			}
--- 		end,
--- 	},
--- })
-vim.cmd.colorscheme("solarized-osaka")
+-- Darkubox colorscheme
+require("darcubox").setup({
+  options = {
+    transparent = true,
+    styles = {
+      comments = { italic = true }, -- italic
+      functions = { bold = true }, -- bold
+      keywords = { italic = true },
+      types = { italic = true, bold = true }, -- italics and bold
+    },
+  },
+})
+vim.cmd.colorscheme("darcubox")
 
 -----------------------------------------------------------
 -- KEYMAPS
@@ -243,7 +239,7 @@ keymap({ "n", "v", "x" }, "<leader>p", '"+p')
 keymap("n", "<leader><leader>", function() require("fff").find_files() end)
 keymap("n", "-", "<CMD>Oil<CR>")
 
--- Treesitter textobjects
+-- -- Treesitter textobjects
 local nts_select = require("nvim-treesitter-textobjects.select").select_textobject
 local nts_move = require("nvim-treesitter-textobjects.move")
 keymap("x", "af", function() nts_select("@function.outer", "textobjects") end)
