@@ -9,7 +9,7 @@ return {
   filetypes = { "python" },
   settings = {
     ty = {
-      diagnosticMode = "workspace",
+      -- diagnosticMode = "workspace",
       experimental = {
         rename = true,
       },
