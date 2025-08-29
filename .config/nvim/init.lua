@@ -11,6 +11,7 @@ opt.number = true
 opt.relativenumber = true
 opt.wrap = false
 opt.tabstop = 2
+opt.shiftwidth = 2
 opt.swapfile = false
 opt.cursorline = true
 opt.scrolloff = 8
@@ -21,14 +22,13 @@ opt.termguicolors = true
 opt.ignorecase = true
 opt.winborder = "rounded"
 opt.signcolumn = "yes"
-opt.smartindent = true
 opt.undofile = true
 opt.incsearch = true
 
 -----------------------------------------------------------
 -- LSP CONFIGURATION
 -----------------------------------------------------------
-vim.lsp.enable({ "ruff", "ty", "luals", "clangd", "rust-analyzer" })
+vim.lsp.enable({ "ruff", "pyrefly", "luals", "clangd", "rust-analyzer" })
 vim.diagnostic.config({ virtual_text = true })
 
 -- LSP keymaps
@@ -66,10 +66,11 @@ vim.pack.add({
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/dmtrKovalenko/fff.nvim" },
-  { src = "https://github.com/echasnovski/mini.nvim" },
+  { src = "https://github.com/nvim-mini/mini.nvim" },
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/vieitesss/miniharp.nvim" },
   { src = "https://github.com/Koalhack/darcubox-nvim" },
+  { src = "https://github.com/sainnhe/gruvbox-material" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
@@ -96,28 +97,23 @@ autocmd("FileType", {
   callback = function(args)
     local filetype = args.match
     local lang = vim.treesitter.language.get_lang(filetype)
-
-    if not lang then return end
+    if not lang then
+      vim.notify("TS cannot determine language.")
+      return
+    end
 
     if vim.treesitter.language.add(lang) then
-      if vim.treesitter.query.get(filetype, "indents") then
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-      end
-      vim.treesitter.start()
+      vim.treesitter.start(args.buf, lang)
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end
   end,
-})
-
-autocmd("FileType", {
-  pattern = { "python", ".py" },
-  callback = function() vim.treesitter.start() end,
 })
 
 -----------------------------------------------------------
 -- PLUGIN CONFIGURATIONS
 -----------------------------------------------------------
 
--- Oil
+-- Oil"
 require("oil").setup({
   keymaps = {
     ["l"] = { "actions.select", mode = "n" },
@@ -196,7 +192,12 @@ require("darcubox").setup({
     },
   },
 })
-vim.cmd.colorscheme("darcubox")
+
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_transparent_background = 1
+vim.g.gruvbox_material_float_style = "none"
+
+vim.cmd.colorscheme("gruvbox-material")
 
 -----------------------------------------------------------
 -- KEYMAPS
@@ -230,7 +231,6 @@ keymap("n", "sa", "gg<S-v>G")
 -- Helpful
 keymap("n", "<leader>ff", vim.lsp.buf.format)
 keymap("x", "y", [["+y]])
-keymap("n", "<leader>cd", '<cmd>lua vim.fn.chdir(vim.fn.expand("%:p:h"))<CR>')
 keymap("n", "<leader>U", "<cmd>lua vim.pack.update()<CR>")
 keymap({ "n", "v", "x" }, "<leader>y", '"+y')
 keymap({ "n", "v", "x" }, "<leader>p", '"+p')
