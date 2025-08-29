@@ -1,4 +1,4 @@
-theme = darkubox
+theme = gruvbox-material
 font-family = Fira Code
 font-size = 22
 
