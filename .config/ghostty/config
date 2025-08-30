@@ -1,5 +1,5 @@
 theme = gruvbox-material
-font-family = Fira Code
+font-family = Cascadia Code
 font-size = 22
 
 # macos-window-shadow = false
