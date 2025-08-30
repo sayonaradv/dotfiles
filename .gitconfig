@@ -1,7 +1,7 @@
 [user]
-  name = dbozbay
-  email = 107803920+dbozbay@users.noreply.github.com
-  excludesfile = ~/.gitignore_global
+  name = shiryo
+	email = 107803920+yourshiryo@users.noreply.github.com  
+	excludesfile = ~/.gitignore_global
   editor = nvim
 [color]
 	ui = true
