@@ -1,6 +1,6 @@
 [user]
-  name = zuzo7
-	email = 107803920+zuzo7@users.noreply.github.com
+  name = zuzo-sh
+	email = 107803920+zuzo-sh@users.noreply.github.com
 	excludesfile = ~/.gitignore_global
   editor = nvim
 [color]
