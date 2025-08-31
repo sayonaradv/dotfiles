@@ -12,7 +12,6 @@ confirm-close-surface = false
 clipboard-read = allow
 clipboard-write = allow
 window-padding-balance = true
-window-save-state = always
 
 keybind = ctrl+a>n=new_window
 keybind = ctrl+a>r=reload_config
