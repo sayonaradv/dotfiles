@@ -28,7 +28,7 @@ opt.incsearch = true
 -----------------------------------------------------------
 -- LSP CONFIGURATION
 -----------------------------------------------------------
-vim.lsp.enable({ "ruff", "pyrefly", "luals", "clangd", "rust-analyzer" })
+vim.lsp.enable({ "ruff", "ty", "luals", "clangd", "rust-analyzer" })
 vim.diagnostic.config({ virtual_text = true })
 
 -- LSP keymaps
@@ -68,6 +68,7 @@ vim.pack.add({
   { src = "https://github.com/dmtrKovalenko/fff.nvim" },
   { src = "https://github.com/nvim-mini/mini.nvim" },
   { src = "https://github.com/folke/snacks.nvim" },
+	{ src = "https://github.com/OXY2DEV/markview.nvim" },
   { src = "https://github.com/vieitesss/miniharp.nvim" },
   { src = "https://github.com/Koalhack/darcubox-nvim" },
   { src = "https://github.com/sainnhe/gruvbox-material" },
