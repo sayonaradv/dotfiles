@@ -11,6 +11,7 @@ opt.number = true
 opt.relativenumber = true
 opt.wrap = false
 opt.tabstop = 2
+opt.smartindent = true
 opt.shiftwidth = 2
 opt.swapfile = false
 opt.cursorline = true
