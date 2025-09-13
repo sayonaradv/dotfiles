@@ -72,9 +72,6 @@ vim.pack.add({
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/OXY2DEV/markview.nvim" },
   { src = "https://github.com/vieitesss/miniharp.nvim" },
-  -- { src = "https://github.com/sainnhe/gruvbox-material" },
-  -- { src = "https://github.com/rktjmp/lush.nvim" },
-  -- { src = "https://github.com/zenbones-theme/zenbones.nvim"},
   { src = "https://github.com/slugbyte/lackluster.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
@@ -206,13 +203,18 @@ require("nvim-web-devicons").setup({
 
 lackluster.setup({
   tweak_ui = {
-    disable_undercurl = true, -- set to true if you want underline instead of undercurl
-    -- enable_end_of_buffer = false,     -- set to true to show the end_of_buffer ~ symbols in the gutter
+    disable_undercurl = true,
   },
   tweak_background = {
     normal = "none",
     telescope = "none",
     popup = "none",
+  },
+  tweak_highlight = {
+    ["@comment"] = {
+      overwrite = false, -- overwrite falsey will extend/update lackluster's defaults (nil also does this)
+      italic = true,
+    },
   },
 })
 vim.cmd.colorscheme("lackluster-hack")
