@@ -69,10 +69,13 @@ vim.pack.add({
   { src = "https://github.com/dmtrKovalenko/fff.nvim" },
   { src = "https://github.com/nvim-mini/mini.nvim" },
   { src = "https://github.com/folke/snacks.nvim" },
+  { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/OXY2DEV/markview.nvim" },
   { src = "https://github.com/vieitesss/miniharp.nvim" },
-  { src = "https://github.com/Koalhack/darcubox-nvim" },
-  { src = "https://github.com/sainnhe/gruvbox-material" },
+  -- { src = "https://github.com/sainnhe/gruvbox-material" },
+  -- { src = "https://github.com/rktjmp/lush.nvim" },
+  -- { src = "https://github.com/zenbones-theme/zenbones.nvim"},
+  { src = "https://github.com/slugbyte/lackluster.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
@@ -182,25 +185,37 @@ require("snacks").setup({
 -- Miniharp
 require("miniharp").setup()
 
--- Darkubox colorscheme
-require("darcubox").setup({
+require("lualine").setup({
   options = {
-    transparent = true,
-    styles = {
-      comments = { italic = true }, -- italic
-      functions = { bold = true }, -- bold
-      keywords = { italic = true },
-      types = { italic = true, bold = true }, -- italics and bold
+    theme = "lackluster",
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+  },
+})
+
+local lackluster = require("lackluster")
+require("nvim-web-devicons").setup({
+  color_icons = false,
+  override = {
+    ["default_icon"] = {
+      color = lackluster.color.gray4,
+      name = "Default",
     },
   },
 })
 
-vim.g.gruvbox_material_background = "hard"
-vim.g.gruvbox_material_transparent_background = 1
-vim.g.gruvbox_material_float_style = "none"
-
-vim.cmd.colorscheme("gruvbox-material")
-
+lackluster.setup({
+  tweak_ui = {
+    disable_undercurl = true, -- set to true if you want underline instead of undercurl
+    -- enable_end_of_buffer = false,     -- set to true to show the end_of_buffer ~ symbols in the gutter
+  },
+  tweak_background = {
+    normal = "none",
+    telescope = "none",
+    popup = "none",
+  },
+})
+vim.cmd.colorscheme("lackluster-hack")
 -----------------------------------------------------------
 -- KEYMAPS
 -----------------------------------------------------------
