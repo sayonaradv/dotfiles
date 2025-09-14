@@ -163,10 +163,13 @@ require("blink.cmp").setup({
 })
 
 -- FFF
-require("fff").setup({
-  prompt = "👻 ",
-  debug = { show_scores = true },
-})
+vim.g.fff = {
+  lazy_sync = true,
+  debug ={
+    enabled = true,
+    show_scores = true,
+  }
+}
 
 -- Mini
 require("mini.move").setup()
@@ -217,7 +220,7 @@ lackluster.setup({
     },
   },
 })
-vim.cmd.colorscheme("lackluster-hack")
+vim.cmd.colorscheme("lackluster-mint")
 -----------------------------------------------------------
 -- KEYMAPS
 -----------------------------------------------------------
