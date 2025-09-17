@@ -29,7 +29,7 @@ opt.incsearch = true
 -----------------------------------------------------------
 -- LSP CONFIGURATION
 -----------------------------------------------------------
-vim.lsp.enable({ "ruff", "ty", "luals", "clangd", "rust-analyzer" })
+vim.lsp.enable({ "ruff", "pyrefly", "luals", "clangd", "rust-analyzer" })
 vim.diagnostic.config({ virtual_text = true })
 
 -- LSP keymaps
@@ -74,6 +74,7 @@ vim.pack.add({
   { src = "https://github.com/vieitesss/miniharp.nvim" },
   { src = "https://github.com/slugbyte/lackluster.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+  { src = "https://github.com/kyza0d/xeno.nvim" },
 }, { load = true })
 
 -----------------------------------------------------------
@@ -165,10 +166,10 @@ require("blink.cmp").setup({
 -- FFF
 vim.g.fff = {
   lazy_sync = true,
-  debug ={
+  debug = {
     enabled = true,
     show_scores = true,
-  }
+  },
 }
 
 -- Mini
@@ -182,45 +183,49 @@ require("snacks").setup({
   indent = { enabled = true },
 })
 
--- Miniharp
-require("miniharp").setup()
+require("xeno").new_theme("xeno-lilypad", {
+  base = "#1E1E1E",
+  accent = "#8CBE8C",
+  contrast = 0.1,
+  transparent = true,
+})
+vim.cmd("colorscheme xeno-lilypad")
 
 require("lualine").setup({
   options = {
-    theme = "lackluster",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
   },
 })
 
-local lackluster = require("lackluster")
-require("nvim-web-devicons").setup({
-  color_icons = false,
-  override = {
-    ["default_icon"] = {
-      color = lackluster.color.gray4,
-      name = "Default",
-    },
-  },
-})
-
-lackluster.setup({
-  tweak_ui = {
-    disable_undercurl = true,
-  },
-  tweak_background = {
-    normal = "none",
-    telescope = "none",
-    popup = "none",
-  },
-  tweak_highlight = {
-    ["@comment"] = {
-      overwrite = false, -- overwrite falsey will extend/update lackluster's defaults (nil also does this)
-      italic = true,
-    },
-  },
-})
-vim.cmd.colorscheme("lackluster-mint")
+-- local lackluster = require("lackluster")
+-- require("nvim-web-devicons").setup({
+--   color_icons = false,
+--   override = {
+--     ["default_icon"] = {
+--       color = lackluster.color.gray4,
+--       name = "Default",
+--     },
+--   },
+-- })
+--
+-- lackluster.setup({
+--   tweak_ui = {
+--     disable_undercurl = true,
+--   },
+--   tweak_background = {
+--     normal = "none",
+--     telescope = "none",
+--     popup = "none",
+--   },
+--   tweak_highlight = {
+--     ["@comment"] = {
+--       overwrite = false, -- overwrite falsey will extend/update lackluster's defaults (nil also does this)
+--       italic = true,
+--     },
+--   },
+-- })
+-- vim.cmd.colorscheme("lackluster-hack")
 -----------------------------------------------------------
 -- KEYMAPS
 -----------------------------------------------------------

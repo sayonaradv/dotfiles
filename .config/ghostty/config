@@ -1,20 +1,24 @@
-theme = lackluster
+theme = Terminal Basic Dark
 font-family = MonoLisa
 font-style = Medium
 font-style-bold = Bold
 font-style-italic = Medium Italic
 font-style-bold-italic = Bold Italic
-
 font-size = 25
 
-auto-update-channel = tip
+auto-update-channel = stable
+
 macos-option-as-alt = left
-mouse-hide-while-typing = true
+macos-titlebar-style = transparent
 macos-titlebar-proxy-icon = hidden
 maximize = true
+
+mouse-hide-while-typing = true
 confirm-close-surface = false
+
 clipboard-read = allow
 clipboard-write = allow
+
 window-padding-x = 1
 window-padding-y = 1
 window-padding-balance = true

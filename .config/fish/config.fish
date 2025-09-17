@@ -11,5 +11,4 @@ set -gx EZA_COLORS 'ex=38;2;120;153;120:fi=38;2;204;204;204:di=38;2;85;85;85:b0=
 alias v="nvim"
 alias lg="lazygit"
 
-starship init fish | source
 zoxide init fish | source
