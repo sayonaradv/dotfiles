@@ -72,9 +72,9 @@ vim.pack.add({
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/OXY2DEV/markview.nvim" },
   { src = "https://github.com/vieitesss/miniharp.nvim" },
-  { src = "https://github.com/slugbyte/lackluster.nvim" },
+  -- { src = "https://github.com/slugbyte/lackluster.nvim" },
+  { src = "https://github.com/mcauley-penney/techbase.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
-  { src = "https://github.com/kyza0d/xeno.nvim" },
 }, { load = true })
 
 -----------------------------------------------------------
@@ -173,7 +173,19 @@ vim.g.fff = {
 }
 
 -- Mini
-require("mini.move").setup()
+require("mini.move").setup({
+  mappings = {
+    left = "<S-h>",
+    right = "<S-l>",
+    down = "<S-j>",
+    up = "<S-k>",
+
+    line_left = "<S-h>",
+    line_right = "<S-l>",
+    line_down = "<S-j>",
+    line_up = "<S-k>",
+  },
+})
 
 -- Snacks
 require("snacks").setup({
@@ -183,13 +195,7 @@ require("snacks").setup({
   indent = { enabled = true },
 })
 
-require("xeno").new_theme("xeno-lilypad", {
-  base = "#1E1E1E",
-  accent = "#8CBE8C",
-  contrast = 0.1,
-  transparent = true,
-})
-vim.cmd("colorscheme xeno-lilypad")
+vim.cmd("colorscheme techbase")
 
 require("lualine").setup({
   options = {
