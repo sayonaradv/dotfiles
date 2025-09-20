@@ -4,4 +4,3 @@ alias v="nvim"
 alias lg="lazygit"
 
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
