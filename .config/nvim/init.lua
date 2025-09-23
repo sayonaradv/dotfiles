@@ -71,7 +71,7 @@ vim.pack.add({
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/OXY2DEV/markview.nvim" },
-  { src = "https://github.com/vieitesss/miniharp.nvim" },
+  -- { src = "https://github.com/vieitesss/miniharp.nvim" },
   -- { src = "https://github.com/slugbyte/lackluster.nvim" },
   { src = "https://github.com/mcauley-penney/techbase.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
@@ -175,15 +175,15 @@ vim.g.fff = {
 -- Mini
 require("mini.move").setup({
   mappings = {
-    left = "<S-h>",
-    right = "<S-l>",
-    down = "<S-j>",
-    up = "<S-k>",
+    left = "<C-h>",
+    right = "<C-l>",
+    down = "<C-j>",
+    up = "<C-k>",
 
-    line_left = "<S-h>",
-    line_right = "<S-l>",
-    line_down = "<S-j>",
-    line_up = "<S-k>",
+    line_left = "<C-h>",
+    line_right = "<C-l>",
+    line_down = "<C-j>",
+    line_up = "<C-k>",
   },
 })
 
@@ -249,11 +249,11 @@ keymap("n", "ss", "<cmd>split<CR>")
 keymap("n", "sd", "<cmd>close<CR>")
 
 -- Window navigation
-keymap("n", "<C-h>", "<C-w>h")
-keymap("n", "<C-j>", "<C-w>j")
-keymap("n", "<C-k>", "<C-w>k")
-keymap("n", "<C-l>", "<C-w>l")
-
+-- keymap("n", "<C-h>", "<C-w>h")
+-- keymap("n", "<C-j>", "<C-w>j")
+-- keymap("n", "<C-k>", "<C-w>k")
+-- keymap("n", "<C-l>", "<C-w>l")
+--
 -- Scroll
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
@@ -300,7 +300,7 @@ keymap("n", "<leader>gg", function() Snacks.lazygit() end)
 keymap("n", "<leader>gB", function() Snacks.gitbrowse() end)
 
 -- Miniharpoon
-keymap("n", "<leader>m", require("miniharp").toggle_file)
-keymap("n", "<C-n>", require("miniharp").next)
-keymap("n", "<C-p>", require("miniharp").prev)
-keymap("n", "<leader>mx", require("miniharp").clear)
+-- keymap("n", "<leader>m", require("miniharp").toggle_file)
+-- keymap("n", "<C-n>", require("miniharp").next)
+-- keymap("n", "<C-p>", require("miniharp").prev)
+-- keymap("n", "<leader>mx", require("miniharp").clear)

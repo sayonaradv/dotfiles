@@ -1,8 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export BOB_CONFIG:/Users/zuzo/\x2econfig/bob/config\x2ejson
-SETUVAR --export BOB_Config:/Users/zuzo/\x2econfig/bob/config\x2ejson
-SETUVAR --export XDG_CONFIG_HOME:/Users/zuzo/\x2econfig
+SETUVAR --export BOB_CONFIG:/Users/yay/\x2econfig/bob/config\x2ejson
+SETUVAR --export BOB_Config:/Users/yay/\x2econfig/bob/config\x2ejson
+SETUVAR --export XDG_CONFIG_HOME:/Users/yay/\x2econfig
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
@@ -33,4 +33,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/zuzo/\x2elocal/share/bob/nvim\x2dbin\x1e/Users/zuzo/\x2elocal/bin
+SETUVAR fish_user_paths:/Users/yay/\x2elocal/share/bob/nvim\x2dbin\x1e/Users/yay/\x2elocal/bin
