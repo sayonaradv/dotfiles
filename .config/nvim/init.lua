@@ -73,7 +73,7 @@ vim.pack.add({
   { src = "https://github.com/OXY2DEV/markview.nvim" },
   -- { src = "https://github.com/slugbyte/lackluster.nvim" },
   -- { src = "https://github.com/mcauley-penney/techbase.nvim" },
-	{ src = "https://github.com/mitch1000/backpack.nvim"},
+  { src = "https://github.com/mitch1000/backpack.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
