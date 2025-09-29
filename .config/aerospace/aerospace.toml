@@ -5,7 +5,7 @@
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 # after-startup-command = []
 after-startup-command = [
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+  'exec-and-forget borders active_color=0xff0053BA inactive_color=0xff494d64 width=5.0'
 ]
 
 # Start AeroSpace at login
@@ -24,12 +24,12 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
-    outer.left =       10
-    outer.bottom =     10
-    outer.top =        10
-    outer.right =      10
+    inner.horizontal = 8
+    inner.vertical =   8
+    outer.left =       8
+    outer.bottom =     8
+    outer.top =        8
+    outer.right =      8
 
 [mode.main.binding]
 		# Open apps

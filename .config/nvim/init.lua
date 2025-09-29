@@ -71,9 +71,9 @@ vim.pack.add({
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/OXY2DEV/markview.nvim" },
-  -- { src = "https://github.com/vieitesss/miniharp.nvim" },
   -- { src = "https://github.com/slugbyte/lackluster.nvim" },
-  { src = "https://github.com/mcauley-penney/techbase.nvim" },
+  -- { src = "https://github.com/mcauley-penney/techbase.nvim" },
+	{ src = "https://github.com/mitch1000/backpack.nvim"},
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
@@ -195,7 +195,7 @@ require("snacks").setup({
   indent = { enabled = true },
 })
 
-vim.cmd("colorscheme techbase")
+vim.cmd("colorscheme backpack")
 
 require("lualine").setup({
   options = {

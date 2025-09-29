@@ -1,14 +1,16 @@
-theme = Terminal Basic Dark
-font-family = Cascadia Code
-# font-style = Medium
-# font-style-bold = Bold
-# font-style-italic = Medium Italic
-# font-style-bold-italic = Bold Italic
+theme = backpack
+font-family = MonoLisa
+font-style = Medium
+font-style-bold = Bold
+font-style-italic = Medium Italic
+font-style-bold-italic = Bold Italic
 font-size = 18
 
 macos-option-as-alt = left
-macos-titlebar-style = transparent
+macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
+macos-window-shadow = false
+macos-window-buttons = hidden
 maximize = true
 
 mouse-hide-while-typing = true
