@@ -71,9 +71,8 @@ vim.pack.add({
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/OXY2DEV/markview.nvim" },
-  -- { src = "https://github.com/slugbyte/lackluster.nvim" },
+  { src = "https://github.com/slugbyte/lackluster.nvim" },
   -- { src = "https://github.com/mcauley-penney/techbase.nvim" },
-  { src = "https://github.com/mitch1000/backpack.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
@@ -195,12 +194,33 @@ require("snacks").setup({
   indent = { enabled = true },
 })
 
-vim.cmd("colorscheme backpack")
+local lackluster = require("lackluster")
+
+require("nvim-web-devicons").setup({
+  color_icons = false,
+  override = {
+    ["default_icon"] = {
+      color = lackluster.color.gray4,
+      name = "Default",
+    },
+  },
+})
+
+lackluster.setup({
+  tweak_background = {
+    normal = "none",
+    telescope = "none",
+    menu = "none",
+    popup = "none",
+  },
+})
+vim.cmd("colorscheme lackluster-hack")
 
 require("lualine").setup({
   options = {
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
+    theme = "lackluster",
+    -- component_separators = { left = "", right = "" },
+    -- section_separators = { left = "", right = "" },
   },
 })
 

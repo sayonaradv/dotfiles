@@ -1,10 +1,11 @@
-theme = backpack
-font-family = MonoLisa
-font-style = Medium
-font-style-bold = Bold
-font-style-italic = Medium Italic
-font-style-bold-italic = Bold Italic
-font-size = 18
+theme = lackluster
+font-family = IBM Plex Mono
+font-style = Text
+font-size = 22
+
+cursor-style = block
+cursor-style-blink = true
+shell-integration-features = no-cursor
 
 macos-option-as-alt = left
 macos-titlebar-style = hidden

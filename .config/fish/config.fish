@@ -9,3 +9,6 @@ alias v="nvim"
 alias lg="lazygit"
 
 zoxide init fish | source
+
+# uv
+fish_add_path "/Users/sayonara/.local/bin"
