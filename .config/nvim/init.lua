@@ -29,7 +29,7 @@ opt.incsearch = true
 -----------------------------------------------------------
 -- LSP CONFIGURATION
 -----------------------------------------------------------
-vim.lsp.enable({ "ruff", "pyrefly", "luals", "clangd", "rust-analyzer" })
+vim.lsp.enable({ "ruff", "ty", "luals", "clangd", "rust-analyzer" })
 vim.diagnostic.config({ virtual_text = true })
 
 -- LSP keymaps
@@ -71,8 +71,9 @@ vim.pack.add({
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/OXY2DEV/markview.nvim" },
-  { src = "https://github.com/slugbyte/lackluster.nvim" },
-  -- { src = "https://github.com/mcauley-penney/techbase.nvim" },
+  -- { src = "https://github.com/slugbyte/lackluster.nvim" },
+  -- { src = "https://github.com/Mitch1000/backpack.nvim" },
+  { src = "https://github.com/WTFox/jellybeans.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 }, { load = true })
 
@@ -194,33 +195,12 @@ require("snacks").setup({
   indent = { enabled = true },
 })
 
-local lackluster = require("lackluster")
-
-require("nvim-web-devicons").setup({
-  color_icons = false,
-  override = {
-    ["default_icon"] = {
-      color = lackluster.color.gray4,
-      name = "Default",
-    },
-  },
-})
-
-lackluster.setup({
-  tweak_background = {
-    normal = "none",
-    telescope = "none",
-    menu = "none",
-    popup = "none",
-  },
-})
-vim.cmd("colorscheme lackluster-hack")
+vim.cmd([[colorscheme jellybeans-mono]])
 
 require("lualine").setup({
   options = {
-    theme = "lackluster",
-    -- component_separators = { left = "", right = "" },
-    -- section_separators = { left = "", right = "" },
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
   },
 })
 

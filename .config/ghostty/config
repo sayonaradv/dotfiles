@@ -1,7 +1,7 @@
-theme = lackluster
-font-family = IBM Plex Mono
-font-style = Text
+theme = jellybeans-mono
+font-family = Source Code Pro
 font-size = 22
+font-thicken = true
 
 cursor-style = block
 cursor-style-blink = true

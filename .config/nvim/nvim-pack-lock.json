@@ -1,20 +1,36 @@
 {
   "plugins": {
+    "backpack.nvim": {
+      "rev": "915c40e",
+      "src": "https://github.com/Mitch1000/backpack.nvim"
+    },
     "blink.cmp": {
       "rev": "327fff9",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
     "fff.nvim": {
-      "rev": "550a905",
+      "rev": "e8850c3",
       "src": "https://github.com/dmtrKovalenko/fff.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "1ee5c1f",
+      "rev": "20ad441",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "gruvdark.nvim": {
+      "rev": "acc0114",
+      "src": "https://github.com/darianmorat/gruvdark.nvim"
+    },
+    "jellybeans.nvim": {
+      "rev": "28b8088",
+      "src": "https://github.com/WTFox/jellybeans.nvim"
+    },
+    "kanagawa-paper.nvim": {
+      "rev": "3ed25ea",
+      "src": "https://github.com/thesimonho/kanagawa-paper.nvim"
+    },
     "lackluster.nvim": {
-      "rev": "b247a6f",
+      "rev": "70dd682",
       "src": "https://github.com/slugbyte/lackluster.nvim"
     },
     "lspkind.nvim": {
@@ -22,19 +38,19 @@
       "src": "https://github.com/onsails/lspkind.nvim"
     },
     "lualine.nvim": {
-      "rev": "b8c2315",
+      "rev": "3946f01",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "markview.nvim": {
-      "rev": "a3c43a2",
+      "rev": "c93ea99",
       "src": "https://github.com/OXY2DEV/markview.nvim"
     },
     "mini.nvim": {
-      "rev": "79654ef",
+      "rev": "e04b5c6",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-treesitter": {
-      "rev": "01ced749",
+      "rev": "71bf1665",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -48,12 +64,16 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
-      "rev": "919e155",
+      "rev": "7e1cd77",
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "snacks.nvim": {
-      "rev": "bfe8c26",
+      "rev": "d161382",
       "src": "https://github.com/folke/snacks.nvim"
+    },
+    "techbase.nvim": {
+      "rev": "0da0261",
+      "src": "https://github.com/mcauley-penney/techbase.nvim"
     }
   }
 }
